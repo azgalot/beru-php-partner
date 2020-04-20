@@ -137,4 +137,27 @@ class OrderProcessingClient extends Client
 
         return $getDeliveryServiceResponse->getDeliveryService();
     }
+
+    /**
+     * Return StreamInterface
+     *
+     * @see https://yandex.ru/dev/market/partner-marketplace-cd/doc/dg/reference/get-campaigns-id-orders-id-delivery-labels-docpage/
+     *
+     * @param $campaignId
+     * @param $orderId
+     * @return \Psr\Http\Message\StreamInterface
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Yandex\Beru\Partner\Exception\PartnerRequestException
+     * @throws \Yandex\Common\Exception\ForbiddenException
+     * @throws \Yandex\Common\Exception\UnauthorizedException
+     */
+    public function getOrderLabels($campaignId, $orderId)
+    {
+        $resource = 'campaigns/' .$campaignId . '/orders/' . $orderId . '/delivery/labels.json';
+
+        return $this->sendRequest(
+            'GET',
+            $this->getServiceUrl($resource)
+        )->getBody();
+    }
 }

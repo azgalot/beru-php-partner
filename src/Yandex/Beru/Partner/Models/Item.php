@@ -36,7 +36,7 @@ class Item extends Model
     }
 
     /**
-     * @return string
+     * @return int
      */
     public function getFeedId()
     {
