@@ -8,6 +8,7 @@ class Shipment extends Model
 {
     protected $id;
     protected $boxes;
+    protected $shipmentDate;
 
     protected $mappingClasses = [
         'boxes' => Boxes::class
@@ -26,5 +27,13 @@ class Shipment extends Model
     public function getId()
     {
         return $this->id;
+    }
+
+    /**
+     * @return string|null
+     */
+    public function getShipmentDate()
+    {
+        return $this->shipmentDate;
     }
 }
