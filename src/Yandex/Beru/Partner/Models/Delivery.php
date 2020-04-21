@@ -17,10 +17,12 @@ class Delivery extends Model
     protected $region;
     protected $shipments;
     protected $deliveryServiceId;
+    protected $dates;
 
     protected $mappingClasses = [
         'region' => Region::class,
         'shipments' => Shipments::class,
+        'dates' => Dates::class,
     ];
 
     /**
@@ -77,5 +79,13 @@ class Delivery extends Model
     public function getDeliveryServiceId()
     {
         return $this->deliveryServiceId;
+    }
+
+    /**
+     * @return Dates|null
+     */
+    public function getDates()
+    {
+        return $this->dates;
     }
 }
