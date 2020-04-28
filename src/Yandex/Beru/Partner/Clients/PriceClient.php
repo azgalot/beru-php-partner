@@ -45,6 +45,7 @@ class PriceClient extends Client
      * @return PostResponse
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Yandex\Beru\Partner\Exception\PartnerRequestException
+     * @throws \Yandex\Beru\Partner\Exception\ExtendedErrorsException
      * @throws \Yandex\Common\Exception\ForbiddenException
      * @throws \Yandex\Common\Exception\UnauthorizedException
      */

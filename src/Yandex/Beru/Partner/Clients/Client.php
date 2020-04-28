@@ -7,6 +7,7 @@ use Yandex\Common\AbstractServiceClient;
 use Yandex\Common\Exception\ForbiddenException;
 use Yandex\Common\Exception\UnauthorizedException;
 use Yandex\Beru\Partner\Exception\PartnerRequestException;
+use Yandex\Beru\Partner\Exception\ExtendedErrorsException;
 
 class Client extends AbstractServiceClient
 {
@@ -138,6 +139,7 @@ class Client extends AbstractServiceClient
      * @throws ForbiddenException
      * @throws UnauthorizedException
      * @throws PartnerRequestException
+     * @throws ExtendedErrorsException
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     protected function sendRequest($method, $uri, array $options = [])
@@ -150,12 +152,44 @@ class Client extends AbstractServiceClient
             $code = $result->getStatusCode();
             $message = $result->getReasonPhrase();
             $body = $result->getBody();
+            $errors = [];
 
             if ($body) {
                 $jsonBody = json_decode($body);
-                if ($jsonBody && isset($jsonBody->error) && isset($jsonBody->error->message)) {
-                    $message = $jsonBody->error->message;
+
+                if ($jsonBody) {
+                    if (isset($jsonBody->error) || isset($jsonBody->errors)) {
+                        $message = '';
+                    }
+
+                    if (isset($jsonBody->error) && isset($jsonBody->error->message)) {
+                        $message .= $jsonBody->error->message;
+                    }
+
+                    if (isset($jsonBody->errors)) {
+                        foreach ($jsonBody->errors as $error) {
+                            if (!isset($errors[$error->code])) {
+                                $errors[$error->code] = [];
+                            }
+
+                            array_push(
+                                $errors[$error->code],
+                                $error->message
+                            );
+                        }
+                    }
                 }
+            }
+
+            if (empty($message) && !empty($errors)) {
+                throw new ExtendedErrorsException(
+                    sprintf(
+                        'Service responded with some errors (%s)',
+                        trim(implode(', ', array_keys($errors)), ', ')
+                    ),
+                    $code,
+                    $errors
+                );
             }
 
             if ($code === 403) {
