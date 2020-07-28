@@ -128,4 +128,24 @@ class ShipmentsClient extends Client
 
         return $decodedResponseBody;
     }
+    
+    /**
+     * Return PDF file
+     *
+     * @see  https://yandex.ru/dev/market/partner-marketplace-cd/doc/dg/reference/get-campaigns-id-shipments-reception-transfer-act-docpage/
+     *
+     * @param  $campaignId
+     * @return mixed|\SimpleXMLElement
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Yandex\Beru\Partner\Exception\ExtendedErrorsException
+     * @throws \Yandex\Beru\Partner\Exception\PartnerRequestException
+     * @throws \Yandex\Common\Exception\ForbiddenException
+     * @throws \Yandex\Common\Exception\UnauthorizedException
+     */
+    public function getAcceptanceCertificate($campaignId)
+    {
+        $resource = 'campaigns/' . $campaignId . '/shipments/reception-transfer-act';
+        $response = $this->sendRequest('GET', $this->getServiceUrl($resource));
+        return $this->getDecodedBody($response->getBody()->getContents());
+    }
 }
