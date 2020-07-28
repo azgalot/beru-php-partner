@@ -134,8 +134,8 @@ class ShipmentsClient extends Client
      *
      * @see  https://yandex.ru/dev/market/partner-marketplace-cd/doc/dg/reference/get-campaigns-id-shipments-reception-transfer-act-docpage/
      *
-     * @param  $campaignId
-     * @return mixed|\SimpleXMLElement
+     * @param $campaignId
+     * @return string
      * @throws \GuzzleHttp\Exception\GuzzleException
      * @throws \Yandex\Beru\Partner\Exception\ExtendedErrorsException
      * @throws \Yandex\Beru\Partner\Exception\PartnerRequestException
@@ -146,6 +146,6 @@ class ShipmentsClient extends Client
     {
         $resource = 'campaigns/' . $campaignId . '/shipments/reception-transfer-act';
         $response = $this->sendRequest('GET', $this->getServiceUrl($resource));
-        return $this->getDecodedBody($response->getBody()->getContents());
+        return $response->getBody()->getContents();
     }
 }
