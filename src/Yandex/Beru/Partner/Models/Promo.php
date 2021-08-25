@@ -8,6 +8,7 @@ class Promo extends Model
 {
     const TYPE_MARKET_COUPON = "MARKET_COUPON";
     const TYPE_MARKET_DEAL = "MARKET_DEAL";
+    const TYPE_MARKET_COIN = "MARKET_COIN";
 
     protected $marketPromoId;
     protected $subsidy;
