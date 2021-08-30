@@ -8,6 +8,7 @@ class StocksResponse extends Model
 {
     protected $warehouseId;
     protected $skus;
+    protected $partnerWarehouseId;
 
     /**
      * @return int
@@ -23,5 +24,13 @@ class StocksResponse extends Model
     public function getSkus()
     {
         return $this->skus;
+    }
+
+    /**
+     * @return null|string
+     */
+    public function getPartnerWarehouseId()
+    {
+        return $this->partnerWarehouseId;
     }
 }
