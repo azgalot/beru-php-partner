@@ -40,6 +40,32 @@ class OrderProcessingClient extends Client
     }
 
     /**
+     * Change order positions
+     *
+     * @https://yandex.ru/dev/market/partner-marketplace-cd/doc/dg/reference/put-campaigns-id-orders-id-items.html
+     *
+     * @param $campaignId
+     * @param $orderId
+     * @param array $params
+     *
+     * @return int
+     * @throws \Yandex\Beru\Partner\Exception\ExtendedErrorsException
+     * @throws \Yandex\Beru\Partner\Exception\PartnerRequestException
+     */
+    public function changeOrderPositions($campaignId, $orderId, array $params = [])
+    {
+        $resource = 'campaigns/' . $campaignId . '/orders/' . $orderId . '/items.json';
+
+        $response = $this->sendRequest(
+            'PUT',
+            $this->getServiceUrl($resource),
+            ['json' => $params]
+        );
+
+        return $response->getStatusCode();
+    }
+
+    /**
      * Sends Beru information about the distribution of goods included in the order, by boxes.
      *
      * @see https://yandex.ru/dev/market/partner-marketplace-cd/doc/dg/reference/put-campaigns-id-orders-id-delivery-shipments-id-boxes-docpage/
