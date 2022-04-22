@@ -11,6 +11,7 @@ class Item extends Model
     protected $offerId;
     protected $feedId;
     protected $partnerWarehouseId;
+    protected $warehouseId;
 
     /**
      * @return int
@@ -50,5 +51,13 @@ class Item extends Model
     public function getPartnerWarehouseId()
     {
         return $this->partnerWarehouseId;
+    }
+
+    /**
+     * @return int
+     */
+    public function getWarehouseId()
+    {
+        return $this->warehouseId;
     }
 }
