@@ -51,6 +51,7 @@ class Order extends Model
     protected $items;
     protected $notes;
     protected $subsidyTotal;
+    protected $electronicAcceptanceCertificateCode;
 
     protected $mappingClasses = [
         'delivery' => Delivery::class,
@@ -191,5 +192,13 @@ class Order extends Model
     public function getCreationDateType()
     {
         return DateTime::createFromFormat("d-m-Y H:i:s", $this->getCreationDate());
+    }
+
+    /**
+     * @return string
+     */
+    public function getElectronicAcceptanceCertificateCode()
+    {
+        return $this->electronicAcceptanceCertificateCode;
     }
 }
