@@ -18,11 +18,13 @@ class Delivery extends Model
     protected $shipments;
     protected $deliveryServiceId;
     protected $dates;
+    protected $courier;
 
     protected $mappingClasses = [
         'region' => Region::class,
         'shipments' => Shipments::class,
         'dates' => Dates::class,
+        'courier' => Courier::class,
     ];
 
     /**
@@ -87,5 +89,13 @@ class Delivery extends Model
     public function getDates()
     {
         return $this->dates;
+    }
+
+    /**
+     * @return Courier|null
+     */
+    public function getCourier()
+    {
+        return $this->courier;
     }
 }
