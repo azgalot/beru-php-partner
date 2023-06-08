@@ -1,7 +1,7 @@
 {
-  "name": "yandex-market/beru-php-partner",
-  "description": "PHP library of Partners Beru API.",
-  "keywords":["yandex","sdk", "market", "beru"],
+  "name": "gwinnt/yandex-market",
+  "description": "PHP library for Yandex.Market API",
+  "keywords":["yandex","sdk", "market"],
   "type":"library",
   "license": "MIT",
   "minimum-stability": "dev",
@@ -20,6 +20,10 @@
     {
       "name": "Vitaliia Smahlenko",
       "email": "vsmahlenko@yandex-team.ru"
+    },
+    {
+      "name": "Alex Lushpai",
+      "email": "lushpai@gmail.com"
     }
   ],
   "autoload": {
