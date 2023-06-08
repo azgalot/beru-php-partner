@@ -1,5 +1,5 @@
 {
-  "name": "gwinnt/yandex-market",
+  "name": "gwinn/yandex-market",
   "description": "PHP library for Yandex.Market API",
   "keywords":["yandex","sdk", "market"],
   "type":"library",
