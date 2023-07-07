@@ -52,10 +52,12 @@ class Order extends Model
     protected $notes;
     protected $subsidyTotal;
     protected $electronicAcceptanceCertificateCode;
+    protected $buyer;
 
     protected $mappingClasses = [
         'delivery' => Delivery::class,
         'items' => ItemsOrder::class,
+        'buyer' => Buyer::class,
     ];
 
     /**
@@ -200,5 +202,13 @@ class Order extends Model
     public function getElectronicAcceptanceCertificateCode()
     {
         return $this->electronicAcceptanceCertificateCode;
+    }
+
+    /**
+     * @return Buyer
+     */
+    public function getBuyer()
+    {
+        return $this->buyer;
     }
 }
