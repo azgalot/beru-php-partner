@@ -62,6 +62,32 @@ class RelationshipClient extends Client
     }
 
     /**
+     * Creates relations between products on the marketplace and products from catalog
+     *
+     * @see https://yandex.ru/dev/market/partner-api/doc/ru/reference/business-assortment/updateOfferMappings
+     *
+     * @param string $businessId
+     * @param array $params
+     * @return PostResponse
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Yandex\Beru\Partner\Exception\PartnerRequestException
+     * @throws \Yandex\Common\Exception\ForbiddenException
+     * @throws \Yandex\Common\Exception\UnauthorizedException
+     */
+    public function updateBusinessRelationship($businessId, array $params = [])
+    {
+        $resource = 'businesses/' . $businessId . '/offer-mappings/update';
+        $response = $this->sendRequest(
+            'POST',
+            $this->getServiceUrl($resource),
+            ['json' => $params]
+        );
+        $decodedResponseBody = $this->getDecodedBody($response->getBody());
+
+        return new PostResponse($decodedResponseBody);
+    }
+
+    /**
      * Removes links between products on the Beru marketplace and products from catalog
      *
      * @see https://yandex.ru/dev/market/partner-marketplace-cd/doc/dg/reference/post-campaigns-id-offer-mapping-entries-purge-docpage/
