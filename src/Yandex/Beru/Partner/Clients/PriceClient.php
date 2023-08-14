@@ -63,6 +63,34 @@ class PriceClient extends Client
     }
 
     /**
+     * Manage the prices of offers by businessId
+     *
+     * @see https://yandex.ru/dev/market/partner-api/doc/ru/reference/business-assortment/updateBusinessPrices
+     *
+     * @param string $businessId
+     * @param array $params
+     *
+     * @return PostResponse
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Yandex\Beru\Partner\Exception\PartnerRequestException
+     * @throws \Yandex\Beru\Partner\Exception\ExtendedErrorsException
+     * @throws \Yandex\Common\Exception\ForbiddenException
+     * @throws \Yandex\Common\Exception\UnauthorizedException
+     */
+    public function updateBusinessPrices($businessId, array $params = [])
+    {
+        $resource = 'businesses/' . $businessId . '/offer-prices/updates';
+        $response = $this->sendRequest(
+            'POST',
+            $this->getServiceUrl($resource),
+            ['json' => $params]
+        );
+        $decodedResponseBody = $this->getDecodedBody($response->getBody());
+
+        return new PostResponse($decodedResponseBody);
+    }
+
+    /**
      * Delete all prices set by API
      *
      * @see https://yandex.ru/dev/market/partner-marketplace-cd/doc/dg/reference/post-campaigns-id-offer-prices-removals-docpage/
