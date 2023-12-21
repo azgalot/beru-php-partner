@@ -1,0 +1,179 @@
+{
+  "status": "OK",
+  "result": {
+    "orders": [
+      {
+        "id": 330818349,
+        "creationDate": "2023-11-09",
+        "statusUpdateDate": "2023-11-15T12:20:26.398+03:00",
+        "status": "PROCESSING",
+        "partnerOrderId": "330818349",
+        "paymentType": "PREPAID",
+        "fake": false,
+        "deliveryRegion": {
+          "id": 118808,
+          "name": "Мещерино"
+        },
+        "items": [
+          {
+            "offerName": "Маска многоразовая силиконовая для младенцев PARI Smart BABY арт. 055G4500",
+            "marketSku": 100521899763,
+            "shopSku": "9709",
+            "count": 1,
+            "prices": [
+              {
+                "type": "BUYER",
+                "costPerItem": 2287.00,
+                "total": 2287.00
+              }
+            ],
+            "warehouse": {
+              "id": 54520,
+              "name": "Склад Обручева"
+            },
+            "details": [],
+            "cisList": [],
+            "bidFee": 0
+          },
+          {
+            "offerName": "Трубка-воздуховод Pari 1,2 метра без адаптеров (ж / ж) арт. 041В4592",
+            "marketSku": 101614417298,
+            "shopSku": "10414",
+            "count": 1,
+            "prices": [
+              {
+                "type": "MARKETPLACE",
+                "costPerItem": 84.0000,
+                "total": 84.0000
+              },
+              {
+                "type": "BUYER",
+                "costPerItem": 756.00,
+                "total": 756.00
+              }
+            ],
+            "warehouse": {
+              "id": 54520,
+              "name": "Склад Обручева"
+            },
+            "details": [],
+            "cisList": [],
+            "bidFee": 616
+          },
+          {
+            "offerName": "Фильтры к компрессору Pari COMPACT (5 шт.) арт. 041Е4851",
+            "marketSku": 101461632693,
+            "shopSku": "10427",
+            "count": 1,
+            "prices": [
+              {
+                "type": "MARKETPLACE",
+                "costPerItem": 70.0000,
+                "total": 70.0000
+              },
+              {
+                "type": "BUYER",
+                "costPerItem": 634.00,
+                "total": 634.00
+              }
+            ],
+            "warehouse": {
+              "id": 54520,
+              "name": "Склад Обручева"
+            },
+            "details": [],
+            "cisList": [],
+            "bidFee": 616
+          }
+        ],
+        "payments": [
+          {
+            "id": "338811263",
+            "date": "2023-11-13",
+            "type": "PAYMENT",
+            "source": "BUYER",
+            "total": 2287.00
+          },
+          {
+            "id": "338811264",
+            "date": "2023-11-13",
+            "type": "PAYMENT",
+            "source": "BUYER",
+            "total": 756.00
+          },
+          {
+            "id": "338811265",
+            "date": "2023-11-13",
+            "type": "PAYMENT",
+            "source": "BUYER",
+            "total": 634.00
+          }
+        ],
+        "commissions": [
+          {
+            "type": "AGENCY",
+            "actual": 0.36
+          }
+        ]
+      },
+      {
+        "id": 330762173,
+        "creationDate": "2023-11-09",
+        "statusUpdateDate": "2023-11-15T12:24:24.06+03:00",
+        "status": "PROCESSING",
+        "partnerOrderId": "330762173",
+        "paymentType": "PREPAID",
+        "fake": false,
+        "deliveryRegion": {
+          "id": 35,
+          "name": "Краснодар"
+        },
+        "items": [
+          {
+            "offerName": "Противопролежневый матрас ячеистый с компрессором Ortonica Bubble B01",
+            "marketSku": 101505053463,
+            "shopSku": "8561",
+            "count": 1,
+            "prices": [
+              {
+                "type": "MARKETPLACE",
+                "costPerItem": 809.0000,
+                "total": 809.0000
+              },
+              {
+                "type": "BUYER",
+                "costPerItem": 2082.00,
+                "total": 2082.00
+              }
+            ],
+            "warehouse": {
+              "id": 54520,
+              "name": "Склад Обручева"
+            },
+            "details": [],
+            "cisList": [],
+            "bidFee": 0
+          }
+        ],
+        "payments": [
+          {
+            "id": "338789124",
+            "date": "2023-11-13",
+            "type": "PAYMENT",
+            "source": "BUYER",
+            "total": 2082.00
+          }
+        ],
+        "commissions": [
+          {
+            "type": "AGENCY",
+            "actual": 0.12
+          }
+        ]
+      }
+    ],
+    "paging": {
+      "nextPageToken": "eyJvcCI6Ij4iLCJrZXkiOnsib3JkZXJJZCI6MzMwNzYyMTczfSwic2tpcCI6MH0"
+    }
+  }
+}
