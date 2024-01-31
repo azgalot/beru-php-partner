@@ -96,6 +96,34 @@ class OrderProcessingClient extends Client
     }
 
     /**
+     *  Sends Beru information about the distribution of goods included in the order, by boxes.
+     *
+     * @see https://yandex.ru/dev/market/partner-api/doc/ru/reference/orders/setOrderBoxLayout
+     *
+     * @param $campaignId
+     * @param $orderId
+     * @param array $params
+     * @return array
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Yandex\Beru\Partner\Exception\ExtendedErrorsException
+     * @throws \Yandex\Beru\Partner\Exception\PartnerRequestException
+     * @throws \Yandex\Common\Exception\ForbiddenException
+     * @throws \Yandex\Common\Exception\UnauthorizedException
+     */
+    public function processOrder($campaignId, $orderId, $params = [])
+    {
+        $resource = 'campaigns/' . $campaignId . '/orders/' . $orderId .'/boxes';
+
+        $response = $this->sendRequest(
+            'PUT',
+            $this->getServiceUrl($resource),
+            ['json' => $params]
+        );
+
+        return $this->getDecodedBody($response->getBody());
+    }
+
+    /**
      * Returns information about orders.
      *
      * @see https://yandex.ru/dev/market/partner-marketplace-cd/doc/dg/reference/get-campaigns-id-orders-docpage/
