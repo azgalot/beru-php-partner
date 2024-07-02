@@ -34,7 +34,7 @@ class DetailsStats extends ObjectModel
     /**
      * @return DetailStats
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

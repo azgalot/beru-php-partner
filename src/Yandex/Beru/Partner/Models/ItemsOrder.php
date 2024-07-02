@@ -34,7 +34,7 @@ class ItemsOrder extends ObjectModel
     /**
      * @return ItemOrder
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

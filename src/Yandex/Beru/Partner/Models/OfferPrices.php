@@ -34,7 +34,7 @@ class OfferPrices extends ObjectModel
     /**
      * @return OfferPrice
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

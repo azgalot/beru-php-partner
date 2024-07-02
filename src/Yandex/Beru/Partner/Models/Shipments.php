@@ -34,7 +34,7 @@ class Shipments extends ObjectModel
     /**
      * @return Shipment
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

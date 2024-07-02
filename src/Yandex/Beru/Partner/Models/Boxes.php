@@ -34,7 +34,7 @@ class Boxes extends ObjectModel
     /**
      * @return Box
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

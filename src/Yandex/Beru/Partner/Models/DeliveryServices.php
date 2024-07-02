@@ -34,7 +34,7 @@ class DeliveryServices extends ObjectModel
     /**
      * @return DeliveryService
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

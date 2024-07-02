@@ -34,7 +34,7 @@ class Errors extends ObjectModel
     /**
      * @return Error
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

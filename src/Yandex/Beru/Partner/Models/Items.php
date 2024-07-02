@@ -34,7 +34,7 @@ class Items extends ObjectModel
     /**
      * @return Item
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

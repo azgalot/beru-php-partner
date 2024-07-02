@@ -34,7 +34,7 @@ class OrderItemsStats extends ObjectModel
     /**
      * @return OrderItemStats
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

@@ -34,7 +34,7 @@ class RecommendedPrices extends ObjectModel
     /**
      * @return RecommendedPrice
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

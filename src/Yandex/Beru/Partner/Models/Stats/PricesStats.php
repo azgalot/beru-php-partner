@@ -34,7 +34,7 @@ class PricesStats extends ObjectModel
     /**
      * @return PriceStats
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

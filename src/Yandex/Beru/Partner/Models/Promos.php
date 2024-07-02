@@ -33,7 +33,7 @@ class Promos extends ObjectModel
     /**
      * @return Promo
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

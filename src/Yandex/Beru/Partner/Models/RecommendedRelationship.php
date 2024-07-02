@@ -35,7 +35,7 @@ class RecommendedRelationship extends ObjectModel
     /**
      * @return RecommendedRelation
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

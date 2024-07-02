@@ -48,7 +48,7 @@ class Notes extends ObjectModel
     /**
      * @return Note
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

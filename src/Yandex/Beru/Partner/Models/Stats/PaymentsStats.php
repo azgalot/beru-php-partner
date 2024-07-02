@@ -34,7 +34,7 @@ class PaymentsStats extends ObjectModel
     /**
      * @return PaymentStats
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }

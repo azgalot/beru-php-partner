@@ -34,7 +34,7 @@ class Requests extends ObjectModel
     /**
      * @return Request
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }
