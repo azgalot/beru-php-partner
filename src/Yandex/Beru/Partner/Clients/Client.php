@@ -44,9 +44,10 @@ class Client extends AbstractServiceClient
     /**
      * @param string $token access token
      */
-    public function __construct($clientId = '', $token = '')
+    public function __construct($clientId = '', $token = '', $apiKeyToken = '')
     {
         $this->setAccessToken($token);
+        $this->setApiKeyToken($apiKeyToken);
         $this->setClientId($clientId);
     }
 
