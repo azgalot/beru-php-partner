@@ -33,7 +33,7 @@ class Campaigns extends ObjectModel
     /**
      * @return Campaign
      */
-    public function current()
+    public function current(): mixed
     {
         return parent::current();
     }
